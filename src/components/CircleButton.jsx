@@ -1,33 +1,33 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { string } from 'prop-types';
+import { string, shape } from 'prop-types';
 
 // import Icon from './Icon';
 
 export default function CircleButton(props) {
-  const { children } = props;
+  const { children, style } = props;
   return (
   //   <TouchableOpacity style={[styles.circleButton, style]} onPress={onPress}>
   //     {/* <Icon name={name} size={40} color="white" /> */}
   //   </TouchableOpacity>
   // );
-    <View style={styles.circleButton}>
+    <View style={[styles.circleButton, style]}>
       <Text style={styles.circleButtonLabel}>{children}</Text>
     </View>
   );
 }
 
 CircleButton.propTypes = {
-  // style: shape(),
-  // // name: string.isRequired,
+  style: shape(),
+  // name: string.isRequired,
   // onPress: func,
   children: string.isRequired,
 };
 
-// CircleButton.defaultProps = {
-//   style: null,
-//   onPress: null,
-// };
+CircleButton.defaultProps = {
+  style: null,
+  // onPress: null,
+};
 
 const styles = StyleSheet.create({
   circleButton: {
