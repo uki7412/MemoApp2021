@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  View, Text, TextInput, StyleSheet, TouchableOpacity, Alert,
+  View, Text, TextInput, StyleSheet, TouchableOpacity,
 } from 'react-native';
 // import firebase from 'firebase';
 
@@ -76,12 +76,12 @@ export default function SignUpScreen(props) {
         <View style={styles.footer}>
           <Text style={styles.footerText}>Already registerd?</Text>
           <TouchableOpacity
-            // onPress={() => {
-            //   navigation.reset({
-            //     index: 0,
-            //     routes: [{ name: 'LogIn' }],
-            //   });
-            // }}
+            onPress={() => {
+              // navigation.reset({
+              //   index: 0,
+              //   routes: [{ name: 'LogIn' }],
+              // });
+            }}
           >
             <Text style={styles.footerLink}>Log In.</Text>
           </TouchableOpacity>
