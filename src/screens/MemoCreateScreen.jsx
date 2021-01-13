@@ -7,7 +7,7 @@ import AppBar from '../components/AppBar';
 // import firebase from 'firebase';
 
 import CircleButton from '../components/CircleButton';
-// import KeyboardSafeView from '../components/KeyboardSafeView';
+import KeyboardSafeView from '../components/KeyboardSafeView';
 // import { translateErrors } from '../utils';
 
 export default function MemoCreateScreen(props) {
@@ -32,7 +32,7 @@ export default function MemoCreateScreen(props) {
   // }
 
   return (
-    <View style={styles.container}>
+    <KeyboardSafeView style={styles.container}>
       <AppBar />
       <View style={styles.inputContainer}>
         <TextInput
@@ -47,7 +47,7 @@ export default function MemoCreateScreen(props) {
         name="check"
         // onPress={handlePress}
       />
-    </View>
+    </KeyboardSafeView>
   );
 }
 

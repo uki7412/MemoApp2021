@@ -7,7 +7,7 @@ import { shape, string } from 'prop-types';
 
 import Appbar from '../components/AppBar';
 import CircleButton from '../components/CircleButton';
-// import KeyboardSafeView from '../components/KeyboardSafeView';
+import KeyboardSafeView from '../components/KeyboardSafeView';
 // import { translateErrors } from '../utils';
 
 export default function MemoEditScreen(props) {
@@ -35,7 +35,7 @@ export default function MemoEditScreen(props) {
   // }
 
   return (
-    <KeyboardAvoidingView style={styles.container} behavior="height">
+    <KeyboardSafeView style={styles.container} behavior="height">
       <Appbar />
       <View style={styles.inputContainer}>
         <TextInput
@@ -49,7 +49,7 @@ export default function MemoEditScreen(props) {
         name="check"
         // onPress={handlePress}
       />
-    </KeyboardAvoidingView>
+    </KeyboardSafeView>
   );
 }
 
