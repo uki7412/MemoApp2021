@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import {
-  View, TextInput, StyleSheet,
+  View, TextInput, StyleSheet, KeyboardAvoidingView,
 } from 'react-native';
 import { shape, string } from 'prop-types';
 // import firebase from 'firebase';
 
+import Appbar from '../components/AppBar';
 import CircleButton from '../components/CircleButton';
 // import KeyboardSafeView from '../components/KeyboardSafeView';
 // import { translateErrors } from '../utils';
 
 export default function MemoEditScreen(props) {
-  const { route } = props;
-  const { bodyText } = route.params;
-  const [body, setBody] = useState(bodyText);
+  // const { route } = props;
+  // const { bodyText } = route.params;
+  // const [body, setBody] = useState(bodyText);
 
   // function handlePress() {
   //   const { currentUser } = firebase.auth();
@@ -34,34 +35,37 @@ export default function MemoEditScreen(props) {
   // }
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container} behavior="height">
+      <Appbar />
       <View style={styles.inputContainer}>
         <TextInput
-          value={body}
+          value="ゆむゆむooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
           multiline
           style={styles.input}
-          onChangeText={(text) => { setBody(text); }}
+            // onChangeText={(text) => { setBody(text); }}
         />
       </View>
       <CircleButton
         name="check"
         // onPress={handlePress}
       />
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
-MemoEditScreen.propTypes = {
-  route: shape({
-    params: shape({ id: string, bodyText: string }),
-  }).isRequired,
-};
+// MemoEditScreen.propTypes = {
+//   route: shape({
+//     params: shape({ id: string, bodyText: string }),
+//   }).isRequired,
+// };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
   inputContainer: {
+    paddingHorizontal: 27,
+    paddingVertical: 32,
     flex: 1,
   },
   input: {
