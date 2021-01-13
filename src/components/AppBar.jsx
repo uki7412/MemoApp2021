@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function AppBar () {
+export default function AppBar() {
   return (
     <View style={styles.appbar}>
       <View style={styles.appbarInner}>
@@ -9,7 +9,7 @@ export default function AppBar () {
         <Text style={styles.appbarRight}>ログアウト</Text>
       </View>
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
