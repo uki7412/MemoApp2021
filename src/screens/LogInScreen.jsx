@@ -4,8 +4,6 @@ import {
 } from 'react-native';
 // import firebase from 'firebase';
 
-import AppBar from '../components/AppBar';
-
 import Button from '../components/Button';
 // import Loading from '../components/Loading';
 // import { translateErrors } from '../utils';
@@ -43,7 +41,6 @@ export default function LogInScreen(props) {
 
   return (
     <View style={styles.container}>
-      <AppBar />
       {/* <Loading isLoading={isLoading} /> */}
       <View style={styles.inner}>
         <Text style={styles.title}>Log In</Text>

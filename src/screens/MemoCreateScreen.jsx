@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  View, TextInput, StyleSheet, Alert,
+  View, TextInput, StyleSheet,
 } from 'react-native';
-import AppBar from '../components/AppBar';
 
 // import firebase from 'firebase';
 
@@ -10,7 +9,7 @@ import CircleButton from '../components/CircleButton';
 import KeyboardSafeView from '../components/KeyboardSafeView';
 // import { translateErrors } from '../utils';
 
-export default function MemoCreateScreen(props) {
+export default function MemoCreateScreen() {
   // const { navigation } = props;
   // const [bodyText, setBodyText] = useState('');
 
@@ -33,7 +32,6 @@ export default function MemoCreateScreen(props) {
 
   return (
     <KeyboardSafeView style={styles.container}>
-      <AppBar />
       <View style={styles.inputContainer}>
         <TextInput
           // value={bodyText}

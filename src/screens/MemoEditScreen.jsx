@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import {
-  View, TextInput, StyleSheet, KeyboardAvoidingView,
+  View, TextInput, StyleSheet,
 } from 'react-native';
 import { shape, string } from 'prop-types';
 // import firebase from 'firebase';
 
-import Appbar from '../components/AppBar';
 import CircleButton from '../components/CircleButton';
 import KeyboardSafeView from '../components/KeyboardSafeView';
 // import { translateErrors } from '../utils';
@@ -36,7 +35,6 @@ export default function MemoEditScreen(props) {
 
   return (
     <KeyboardSafeView style={styles.container} behavior="height">
-      <Appbar />
       <View style={styles.inputContainer}>
         <TextInput
           value="ゆむゆむooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
