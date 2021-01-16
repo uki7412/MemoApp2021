@@ -9,8 +9,8 @@ import CircleButton from '../components/CircleButton';
 import KeyboardSafeView from '../components/KeyboardSafeView';
 // import { translateErrors } from '../utils';
 
-export default function MemoCreateScreen() {
-  // const { navigation } = props;
+export default function MemoCreateScreen(props) {
+  const { navigation } = props;
   // const [bodyText, setBodyText] = useState('');
 
   // function handlePress() {
@@ -43,7 +43,7 @@ export default function MemoCreateScreen() {
       </View>
       <CircleButton
         name="check"
-        // onPress={handlePress}
+        onPress={() => {navigation.goBack(); }}
       />
     </KeyboardSafeView>
   );

@@ -10,7 +10,7 @@ import Button from '../components/Button';
 // import CancelLogIn from '../components/CancelLogIn';
 
 export default function LogInScreen(props) {
-  // const { navigation } = props;
+  const { navigation } = props;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setLoading] = useState(false);
@@ -64,16 +64,21 @@ export default function LogInScreen(props) {
         />
         <Button
           label="Submit"
-          // onPress={handlePress}
+          onPress={() => {
+            navigation.reset({
+              index: 0,
+              routes: [{ name: 'MemoList' }],
+            });
+          }}
         />
         <View style={styles.footer}>
           <Text style={styles.footerText}>Not registered?</Text>
           <TouchableOpacity
             onPress={() => {
-              // navigation.reset({
-              //   index: 0,
-              //   routes: [{ name: 'SignUp' }],
-              // });
+              navigation.reset({
+                index: 0,
+                routes: [{ name: 'SignUp' }],
+              });
             }}
           >
             <Text style={styles.footerLink}>Sign up here!</Text>

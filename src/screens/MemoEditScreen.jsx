@@ -10,7 +10,7 @@ import KeyboardSafeView from '../components/KeyboardSafeView';
 // import { translateErrors } from '../utils';
 
 export default function MemoEditScreen(props) {
-  // const { route } = props;
+  const { navigation } = props;
   // const { bodyText } = route.params;
   // const [body, setBody] = useState(bodyText);
 
@@ -45,7 +45,7 @@ export default function MemoEditScreen(props) {
       </View>
       <CircleButton
         name="check"
-        // onPress={handlePress}
+        onPress={() => {navigation.goBack();}}
       />
     </KeyboardSafeView>
   );
