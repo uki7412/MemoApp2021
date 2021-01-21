@@ -11,8 +11,8 @@ import Button from '../components/Button';
 
 export default function SignUpScreen(props) {
   const { navigation } = props;
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   // const [isLoading, setLoading] = useState(false);
 
   // useEffect(() => {
@@ -53,8 +53,8 @@ export default function SignUpScreen(props) {
         <Text style={styles.title}>Sign Up</Text>
         <TextInput
           style={styles.input}
-          // value={email}
-          // onChangeText={(text) => { setEmail(text); }}
+          value={email}
+          onChangeText={(text) => { setEmail(text); }}
           autoCapitalize="none"
           keyboardType="email-address"
           placeholder="Email Address"
@@ -62,8 +62,8 @@ export default function SignUpScreen(props) {
         />
         <TextInput
           style={styles.input}
-          // value={password}
-          // onChangeText={(text) => { setPassword(text); }}
+          value={password}
+          onChangeText={(text) => { setPassword(text); }}
           autoCapitalize="none"
           placeholder="Password"
           secureTextEntry

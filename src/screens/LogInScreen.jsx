@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
-  View, Text, TextInput, StyleSheet, TouchableOpacity, Alert,
+  View, Text, TextInput, StyleSheet, TouchableOpacity,
 } from 'react-native';
 // import firebase from 'firebase';
 
@@ -13,7 +13,7 @@ export default function LogInScreen(props) {
   const { navigation } = props;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoading, setLoading] = useState(false);
+  // const [isLoading, setLoading] = useState(false);
 
   // useEffect(() => {
   //   navigation.setOptions({
