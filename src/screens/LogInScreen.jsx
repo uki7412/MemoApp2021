@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import {
-  View, Text, TextInput, StyleSheet, TouchableOpacity,
+  View, Text, TextInput, StyleSheet, TouchableOpacity, Alert,
 } from 'react-native';
-// import firebase from 'firebase';
+import firebase from 'firebase';
 
 import Button from '../components/Button';
 // import Loading from '../components/Loading';
@@ -20,7 +20,20 @@ export default function LogInScreen(props) {
   //     headerRight: () => <CancelLogIn />,
   //   });
   // }, []);
-
+  function handlePress() {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        const { user } = userCredential;
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'MemoList' }],
+        });
+        console.log(user.uid);
+      })
+      .catch((error) => {
+        Alert.alert(error.code);
+      });
+  }
   // function handlePress() {
   //   setLoading(true);
   //   firebase.auth().signInWithEmailAndPassword(email, password)
@@ -64,12 +77,7 @@ export default function LogInScreen(props) {
         />
         <Button
           label="Submit"
-          onPress={() => {
-            navigation.reset({
-              index: 0,
-              routes: [{ name: 'MemoList' }],
-            });
-          }}
+          onPress={handlePress}
         />
         <View style={styles.footer}>
           <Text style={styles.footerText}>Not registered?</Text>
