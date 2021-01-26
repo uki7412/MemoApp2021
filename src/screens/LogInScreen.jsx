@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View, Text, TextInput, StyleSheet, TouchableOpacity, Alert,
 } from 'react-native';
@@ -15,11 +15,21 @@ export default function LogInScreen(props) {
   const [password, setPassword] = useState('');
   // const [isLoading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   navigation.setOptions({
-  //     headerRight: () => <CancelLogIn />,
-  //   });
-  // }, []);
+  useEffect(() => {
+    const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'MemoList' }],
+        });
+      }
+    });
+    return unsubscribe;
+    // navigation.setOptions({
+    //   headerRight: () => <CancelLogIn />,
+    // });
+  }, []);
+
   function handlePress() {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
